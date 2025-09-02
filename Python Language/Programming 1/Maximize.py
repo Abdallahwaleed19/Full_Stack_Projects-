@@ -1,5 +1,0 @@
-num = int(input())
-digits = list(str(num))
-digits.sort(reverse=True)
-big_digits = int(''.join(digits))
-print(big_digits)
