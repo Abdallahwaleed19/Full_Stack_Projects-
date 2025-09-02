@@ -26,5 +26,5 @@ The project demonstrates **user authentication, CRUD operations, and API integra
 
 ### 1️⃣ **Clone the Repository**
 ```bash
-git clone https://github.com/your-username/your-fullstack-django-project.git
+git clone https://github.com/Abdallahwaleed19/Full_Stack_Projects-.git
 cd your-fullstack-django-project
