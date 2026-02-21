@@ -1,0 +1,507 @@
+.islamic-world-map-page {
+    padding: var(--space-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+    color: var(--text-main);
+}
+
+/* Hero Section */
+.islamic-map-hero {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-main) 100%);
+    border: 1px solid var(--border-light);
+}
+
+.islamic-map-hero-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    flex-shrink: 0;
+}
+
+.islamic-map-hero-text {
+    flex: 1;
+}
+
+.islamic-map-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--text-main);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.islamic-map-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    line-height: 1.6;
+}
+
+/* Global Statistics Panel */
+.global-stats-panel {
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+}
+
+.global-stats-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    color: var(--text-main);
+    text-align: center;
+}
+
+.global-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    align-items: stretch;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--bg-main);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    min-height: 100px;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--space-xs);
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.last-updated {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-light);
+}
+
+/* Map Controls */
+.map-controls {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+}
+
+.map-search-wrapper {
+    position: relative;
+    margin-bottom: var(--space-md);
+}
+
+.search-icon {
+    position: absolute;
+    left: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.map-search-input {
+    width: 100%;
+    padding: var(--space-md) var(--space-md) var(--space-md) 3rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-main);
+    color: var(--text-main);
+    transition: all var(--transition);
+}
+
+.map-search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 93, 74, 0.1);
+}
+
+.map-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.filter-pill {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    background: var(--bg-main);
+    color: var(--text-sub);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-pill:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-pill.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Countries Grid */
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    align-items: start;
+}
+
+.country-card {
+    padding: var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    height: 100%;
+}
+
+.country-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.country-card.selected {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 93, 74, 0.2);
+    background: var(--bg-main);
+}
+
+.country-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+    gap: var(--space-sm);
+    flex-shrink: 0;
+}
+
+.country-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.3;
+    word-break: break-word;
+    flex: 1;
+    min-width: 0;
+}
+
+.country-code {
+    font-size: 0.85rem;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--bg-main);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    color: var(--text-sub);
+    font-weight: 600;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.country-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
+    justify-content: space-between;
+}
+
+.country-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) 0;
+    min-height: 28px;
+    gap: var(--space-sm);
+}
+
+.stat-label-small {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.stat-value-small {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: left;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Country Modal */
+.country-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--space-lg);
+    backdrop-filter: blur(4px);
+}
+
+.country-modal {
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    animation: slideDown 0.3s ease-out;
+}
+
+.country-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.country-modal-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.modal-close-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--bg-main);
+    border-radius: var(--radius-sm);
+    color: var(--text-sub);
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: all var(--transition);
+}
+
+.modal-close-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.country-modal-content {
+    padding: var(--space-lg);
+}
+
+.country-detail-section {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.country-detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.country-detail-section svg {
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: var(--space-xs);
+}
+
+.country-detail-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-size: 0.95rem;
+    color: var(--text-sub);
+}
+
+.detail-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.detail-value.highlight {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* Theme Adaptations */
+[data-theme='dark'] .islamic-map-hero-icon,
+[data-theme='dark'] .stat-icon {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+[data-theme='dark'] .country-card {
+    background: var(--bg-card);
+    border-color: var(--border-dark);
+}
+
+[data-theme='dark'] .country-card:hover {
+    border-color: var(--primary);
+}
+
+[data-theme='ramadan'] .islamic-map-hero-icon,
+[data-theme='ramadan'] .stat-icon {
+    background: linear-gradient(135deg, var(--gold-main) 0%, var(--lantern) 100%);
+}
+
+[data-theme='ramadan'] .stat-value {
+    color: var(--gold-main);
+}
+
+[data-theme='ramadan'] .filter-pill.active {
+    background: var(--gold-main);
+    border-color: var(--gold-main);
+}
+
+[data-theme='ramadan'] .country-card {
+    border-left-color: var(--gold-main);
+}
+
+[data-theme='ramadan'] .country-card.selected {
+    box-shadow: 0 0 0 3px rgba(230, 200, 122, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .countries-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .islamic-world-map-page {
+        padding: var(--space-md);
+    }
+
+    .islamic-map-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .islamic-map-title {
+        font-size: 1.5rem;
+    }
+
+    .global-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        min-height: auto;
+    }
+
+    .countries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .country-card {
+        min-height: auto;
+    }
+
+    .map-filters {
+        justify-content: center;
+    }
+
+    .country-modal {
+        max-height: 95vh;
+    }
+}
